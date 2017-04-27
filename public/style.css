@@ -1,0 +1,12 @@
+a.active{
+    color: #000000 !important;
+    text-decoration: underline !important;
+}
+
+.imgCls{
+    max-width: 50%;
+}
+
+.imgEdit {
+    max-width: 20%;
+}
