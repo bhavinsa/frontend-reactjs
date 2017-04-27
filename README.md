@@ -10,4 +10,4 @@ Clone this repo
 
 #4. `npm run serve` - Server builded application.
    
-
+Application start: http://localhost:3000/
