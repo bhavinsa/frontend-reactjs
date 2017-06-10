@@ -13,7 +13,6 @@ import Edit from './product/edit.component.jsx'
 render(
     <Router history={browserHistory}>
         <Route component={Main}>
-            <Route path="/" component={About}/>
             {/* Parameter route*/}
             <Route path="/" component={About}/>
             <Route path="/add" component={Add}/>

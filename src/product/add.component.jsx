@@ -10,7 +10,7 @@ constructor(props) {
       password: '',
       birthDate: '',
       country: '',
-      Gender: '',
+      gender: '',
       Football: false,
       Cricket: false,
       terms: false,
@@ -28,7 +28,7 @@ constructor(props) {
   }
 
    setGender(e) {
-    this.setState({ Gender : e.target.value });
+    this.setState({ gender : e.target.value });
   }
 
   toggleChange(e){
@@ -144,23 +144,23 @@ constructor(props) {
             </select>
             </div>
         </div>
-        <div className="form-group" onChange={this.setGender.bind(this)} >
+        <div className="form-group">
             <label className="control-label col-sm-3">Gender</label>
             <div className="col-sm-6">
                 <div className="row">
                     <div className="col-sm-4">
                 <label className="radio-inline">
-                  <input type="radio" name="femaleRadio" value="Female" />Female
+                  <input type="radio" name="femaleRadio" value="Female"  onChange={this.setGender.bind(this)} checked={this.state.gender === 'Female'} />Female
                   </label>
                     </div>
                     <div className="col-sm-4">
                         <label className="radio-inline">
-                  <input type="radio" name="maleRadio" value="Male" />Male
+                  <input type="radio" name="maleRadio" value="Male" onChange={this.setGender.bind(this)} checked={this.state.gender === 'Male'}/>Male
                   </label>
                     </div>
                     <div className="col-sm-4">
                         <label className="radio-inline">
-                  <input type="radio" name="uncknownRadio" value="Unknown" />Unknown
+                  <input type="radio" name="uncknownRadio" value="Unknown" onChange={this.setGender.bind(this)} checked={this.state.gender === 'Unknown'} />Unknown
                   </label>
                     </div>
                 </div>

@@ -54,13 +54,14 @@ constructor(props) {
         
         this.setState({ 'birthDate':  date});
         this.setState({ 'country':  json.data[0].country});
-        if(json.data[0].gender == 'Female'){
+        this.setState({ 'gender':  json.data[0].gender});
+        /*if(json.data[0].gender == 'Female'){
             document.getElementById("femaleRadio").checked = true;
         }else if(json.data[0].gender == 'Male'){
             document.getElementById("maleRadio").checked = true;
         }else{
             document.getElementById("uncknownRadio").checked = true;
-        }
+        } */
         this.setState({ 'Cricket':  json.data[0].hobby.hobbyCricket});
         this.setState({ 'Football':  json.data[0].hobby.hobbyFootball});
         this.setState({ 'imgName':  json.data[0].imgName});
@@ -76,7 +77,7 @@ constructor(props) {
   }
 
    setGender(e) {
-    this.setState({ Gender : e.target.value });
+    this.setState({ gender : e.target.value });
   }
 
   toggleChange(e){
@@ -192,17 +193,17 @@ constructor(props) {
                 <div className="row">
                     <div className="col-sm-4">
                 <label className="radio-inline">
-                  <input type="radio" name="femaleRadio" id="femaleRadio" value="Female" />Female
+                  <input type="radio" name="femaleRadio" id="femaleRadio" value="Female"  onChange={this.setGender.bind(this)} checked={this.state.gender === 'Female'}/>Female
                   </label>
                     </div>
                     <div className="col-sm-4">
                         <label className="radio-inline">
-                  <input type="radio" name="maleRadio" id="maleRadio" value="Male" />Male
+                  <input type="radio" name="maleRadio" id="maleRadio" value="Male"  onChange={this.setGender.bind(this)} checked={this.state.gender === 'Male'}/>Male
                   </label>
                     </div>
                     <div className="col-sm-4">
                         <label className="radio-inline">
-                  <input type="radio" name="uncknownRadio" id="uncknownRadio" value="Unknown" />Unknown
+                  <input type="radio" name="uncknownRadio" id="uncknownRadio" value="Unknown"  onChange={this.setGender.bind(this)} checked={this.state.gender === 'Unknown'} />Unknown
                   </label>
                     </div>
                 </div>
